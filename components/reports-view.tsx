@@ -73,6 +73,7 @@ function DeleteRenderer({ data, context }: ICellRendererParams) {
   )
 }
 
+
 export default function ReportsView() {
   const gridRef = useRef<AgGridReact>(null)
   const [rowData, setRowData] = useState<ReportRecord[]>(initialReports)
@@ -85,7 +86,7 @@ export default function ReportsView() {
 
   const handleDelete = useCallback((id: number) => { setRowData(prev => prev.filter(r => r.id !== id)); flash('تم حذف التقرير') }, [])
   const handleStatusChange = useCallback((id: number, newStatus: string) => { setRowData(prev => prev.map(r => r.id === id ? { ...r, status: newStatus as ReportRecord['status'] } : r)) }, [])
-
+  
   const handleExport = async () => {
     setIsExporting(true)
     try {
@@ -99,6 +100,7 @@ export default function ReportsView() {
     } catch { flash('حدث خطأ أثناء التصدير') }
     finally { setIsExporting(false) }
   }
+
 
   const onSearchChange = (val: string) => { setSearchText(val); gridRef.current?.api?.setGridOption('quickFilterText', val) }
 
@@ -153,7 +155,7 @@ export default function ReportsView() {
         .rv-grid-card .ag-cell{border:none !important;font-size:.875rem;overflow:visible !important}
         .rv-grid-card .ag-sort-ascending-icon,.rv-grid-card .ag-sort-descending-icon{color:#dc2626}
         .rv-grid-card .ag-paging-panel{border-top:1px solid #f1f5f9;font-size:.82rem;color:#64748b}
-      `}</style>
+        `}</style>
 
       <div className="rv-wrap">
         <div className="rv-header">

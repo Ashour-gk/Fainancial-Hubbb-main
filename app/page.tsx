@@ -41,13 +41,13 @@ export default function AppShell() {
   const renderView = () => {
     switch (activeTab) {
       case 'dashboard':
-        return <DashboardView onAddClick={() => setActiveTab('financial')} />
+        return <DashboardView onAddClick={() => setActiveTab('financial')} userName={user?.name} />
       case 'financial':
         return <FinancialReportsView userRole={user?.role || 'employee'} userName={user?.name || ''} />
       case 'notifications':
         return <NotificationsView />
       default:
-        return <DashboardView onAddClick={() => setActiveTab('financial')} />
+        return <DashboardView onAddClick={() => setActiveTab('financial')} userName={user?.name} />
     }
   }
 

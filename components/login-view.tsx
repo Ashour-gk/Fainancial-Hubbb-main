@@ -44,7 +44,7 @@ export default function LoginView({ onLogin, onSwitchToSignup }: LoginViewProps)
         @keyframes authIn{from{opacity:0;transform:translateY(20px) scale(.96)}to{opacity:1;transform:none}}
         @media(max-width:500px){.auth-card{padding:28px 20px;border:none;box-shadow:none}}
         .auth-logo-wrap{display:flex;flex-direction:column;align-items:center;margin-bottom:28px}
-        .auth-logo{width:80px;height:80px;margin-bottom:14px;object-fit:contain;animation:logoPulse 3s ease-in-out infinite}
+        .auth-logo{width:120px;height:120px;margin-bottom:14px;object-fit:contain;animation:logoPulse 3s ease-in-out infinite}
         @keyframes logoPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
         .auth-brand-name{font-size:1.6rem;font-weight:900;color:#1a1a1a;letter-spacing:-.02em}
         .auth-brand-sub{font-size:.85rem;color:#999;margin-top:2px;font-weight:500}
